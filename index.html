@@ -302,172 +302,136 @@
         }
 
 
-        .profile-intro {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 16px;
-            padding: 24px;
-            color: #eafcff;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-            margin-top: 24px;
-            font-size: 0.95rem;
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-text: #eafaff;
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+            --highlight: #1cd4fc;
+        }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            color: var(--glass-text);
+            background: #111;
             line-height: 1.6;
+            padding: 2rem;
         }
 
-        .profile-intro .tagline {
-            margin-bottom: 16px;
-            font-weight: 400;
+        /* 탭 콘텐츠 */
+        .tab-content {
+            display: none;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 1rem;
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
+            box-shadow: var(--glass-shadow);
+            transition: all 0.3s ease;
         }
 
-        .profile-intro h3 {
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #b5eaff;
+        .tab-content.active {
+            display: block;
         }
 
-        .profile-intro ul {
-            list-style: disc;
-            padding-left: 20px;
-            margin: 0;
+        /* 제목, 소제목 */
+        h2,
+        h3 {
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            color: #ffffff;
         }
 
-        .profile-intro ul li {
-            margin-bottom: 6px;
+        h2 {
+            font-size: 1.75rem;
+            border-left: 4px solid var(--highlight);
+            padding-left: 0.75rem;
+            margin-top: 1.5rem;
         }
 
-        .arknights-profile {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px) saturate(150%);
-            -webkit-backdrop-filter: blur(10px) saturate(150%);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            border-radius: 18px;
-            padding: 24px;
-            margin-top: 32px;
-            color: #e8faff;
+        h3 {
+            font-size: 1.2rem;
+            color: var(--highlight);
+            text-transform: uppercase;
+        }
+
+        /* 본문 단락 */
+        p {
+            margin-bottom: 1rem;
             font-size: 0.95rem;
-            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
-            line-height: 1.7;
         }
 
-        .arknights-profile h2 {
-            font-size: 1.3rem;
-            color: #9fdfff;
-            margin-bottom: 12px;
+        /* 강조 텍스트 */
+        .highlight {
+            color: var(--highlight);
+            font-weight: bold;
         }
 
-        .arknights-profile h3 {
-            font-size: 1rem;
-            color: #ffd3f7;
-            margin: 1em 0 0.5em;
+        /* 리스트 정리 */
+        ul {
+            padding-left: 1.2rem;
+            margin-bottom: 1rem;
         }
 
-        .arknights-profile .ark-id {
-            font-weight: 600;
-            margin-bottom: 8px;
+        ul li {
+            position: relative;
+            padding-left: 1rem;
+            margin-bottom: 0.5rem;
         }
 
-        .arknights-profile .ark-lists {
-            margin-top: 12px;
+        ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--highlight);
+            font-size: 0.8rem;
+            line-height: 1.4;
         }
 
-        .arknights-profile .ark-lists p {
-            margin: 0;
+        ul ul {
+            margin-top: 0.3rem;
+            margin-bottom: 0.7rem;
         }
 
-        .trpg-profile {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px) saturate(150%);
-            -webkit-backdrop-filter: blur(10px) saturate(150%);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 16px;
-            padding: 24px;
-            color: #eafcff;
-            font-size: 0.95rem;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-            line-height: 1.6;
+        ul ul li {
+            font-size: 0.9rem;
+            color: #aad9ff;
+            padding-left: 1rem;
         }
 
-        .trpg-profile h2 {
-            font-size: 1.3rem;
-            color: #aee9ff;
-            margin-bottom: 16px;
+        ul ul li::before {
+            content: "•";
+            color: #70d7f0;
         }
 
-        .trpg-profile h3 {
-            font-size: 1rem;
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
-            color: #ffc7f8;
-        }
-
-        .trpg-block p {
-            margin-bottom: 0.5em;
-        }
-
-        .trpg-profile ul {
-            list-style: disc;
-            padding-left: 20px;
-            margin-top: 0.2em;
-        }
-
-        .trpg-profile ul li {
-            margin-bottom: 4px;
-        }
-
-        .ng-section {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px) saturate(160%);
-            -webkit-backdrop-filter: blur(10px) saturate(160%);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 16px;
-            padding: 24px;
-            color: #f2fdff;
-            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
-            line-height: 1.7;
-            font-size: 0.95rem;
-            margin-top: 24px;
-        }
-
-        .ng-section h2 {
-            font-size: 1.3rem;
-            color: #ffb6d9;
-            margin-bottom: 12px;
-        }
-
-        .ng-note {
-            margin-bottom: 12px;
-            color: #d0f0ff;
-            font-weight: 500;
-        }
-
-        .ng-list {
-            list-style: disc;
-            padding-left: 20px;
-            margin-bottom: 16px;
-        }
-
-        .ng-list li {
-            margin-bottom: 10px;
-        }
-
-        .ng-list ul {
-            list-style: circle;
-            padding-left: 20px;
-            margin-top: 6px;
-        }
-
-        .ng-closing {
-            margin-top: 20px;
-            color: #c9f4ff;
-        }
-
+        /* 문단 강조 */
         .ng-closing em {
-            color: #ffdddd;
+            color: #ff8e8e;
             font-style: normal;
-            font-weight: 600;
+            font-weight: bold;
+        }
+
+        /* 내부 카드 구분용 */
+        .favorites,
+        .ark-lists,
+        .trpg-block {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .dream-gradient {
+            background: linear-gradient(90deg, #FCC1D5, #95F484);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            font-weight: 700;
+            font-size: 1.2rem;
         }
     </style>
 
@@ -496,46 +460,47 @@
                 <button class="tab" data-tab="trpg">TRPG</button>
                 <button class="tab" data-tab="ng">NG</button>
             </div>
+
             <div class="tab-content active" id="profile">
                 <section class="profile-intro">
-                    <p class="tagline">성인 여성입니다.<br>
-                        일상, 게임, 자캐, 그리고 시국 관련 이야기까지 뒤섞인 잡탕찌개 계정이에요.<br>
-                        타임라인 분리를 못 합니다. (모든 관심사가 섞여 있어요!)
+                    <p class="tagline">
+                        성인 여성입니다.<br>
+                        일상, 게임, 자캐, 시국 관련 이야기까지 뒤섞인 잡탕찌개 계정이에요.<br>
+                        타임라인 분리를 하지 않습니다. <span class="highlight">(모든 관심사가 섞여 있어요!)</span>
                     </p>
+
                     <div class="favorites">
-                        <h3>💕FAVES</h3>
+                        <h3>💕 FAVES</h3>
                         <ul>
                             <li>명일방주 (bilibili Server)</li>
                             <li>건담 (우주세기 시리즈)</li>
                             <li>자캐 커뮤니티</li>
                             <li>TRPG (DX3rd)</li>
                             <li>물범 (Animal)</li>
-                            <li>미소녀 백합물 : 신작이 나오면 일단 한 입 먹어봅니다.</li>
+                            <li>미소녀 백합물 – 신작이 나오면 일단 한 입 먹어봅니다.</li>
                         </ul>
                     </div>
                 </section>
             </div>
+
             <div class="tab-content" id="arknights">
-                <p>
                 <section class="arknights-profile">
                     <h2>Arknights</h2>
-                    <p class="ark-id"><strong>Dr. Cullet #8906</strong> <br>
-                        비리비리 서버에서 플레이 중입니다.
-                    </p>
+                    <p class="ark-id"><strong>Dr. Cullet #8906</strong><br>비리비리 서버에서 플레이 중입니다.</p>
 
                     <p class="ark-activity">
-                        주로 그림, 썰, 번역 중심으로 활동하고 있어요.<br>
+                        주로 그림, 썰, 번역 중심으로 활동 중이며,<br>
                         여기서도 미소녀 캐릭터 위주로 덕질합니다.
                     </p>
 
                     <p class="ark-preference">
-                        기본적으로 논컾 위주지만,<br>
+                        기본적으로 논CP 위주지만,<br>
                         가끔 GL 커플 언급도 있습니다.
                     </p>
 
                     <p class="ark-offer">
-                        공식 스토리 (이벤트, 오퍼레이터 레코드, 모듈) 번역 요청해 주시면,<br>
-                        짬날 때 진행해서 공유드려요.
+                        공식 스토리 (이벤트, 오퍼레이터 레코드, 모듈 등)<br>
+                        번역 요청해 주시면 짬날 때 공유드립니다.
                     </p>
 
                     <div class="ark-lists">
@@ -545,26 +510,23 @@
                         </div>
 
                         <div class="ark-dream">
-                            <h3>❤️ GORANY Dr.Agony x Harmonie</h3>
-                            <p>박사 × 아르모니 CP 드림 중입니다.<br>
-                                온리 성향이라 겹드림은 다소 어렵습니다. 그 외의 배려는 괜찮아요.</p>
+                            <h3 class="dream-gradient">❤️ Dream: Dr. Agony × Harmonie</h3>
+                            <p>박사 × 아르모니 CP 드림 중입니다.<br>온리 성향이라 겹드림은 어렵지만, 그 외의 배려는 환영합니다.</p>
                         </div>
                     </div>
                 </section>
-                </p>
             </div>
+
             <div class="tab-content" id="trpg">
                 <section class="trpg-profile">
                     <h2>TRPG</h2>
                     <p class="trpg-main">
-                        주력 룰은 <strong>CoC</strong>와 <strong>DX3rd</strong>이며, 가벼운 RP 위주의 플레이를 선호합니다.
+                        주력 룰은 <strong>CoC</strong>와 <strong>DX3rd</strong>이며,<br>가벼운 RP 위주의 플레이를 선호합니다.
                     </p>
 
                     <div class="trpg-block">
-                        <h3>🎲 배포 중인 번역 룰북</h3>
-                        <p>1차 번역 배포 중인 TRPG 룰북이 있습니다.<br>
-                            원하신다면 DM으로 인증 방법을 안내드립니다.</p>
-
+                        <h3>🎲 번역 배포 중인 룰북</h3>
+                        <p>1차 번역된 TRPG 룰북을 배포 중입니다.<br>DM으로 오시면 인증 방법을 안내드립니다.</p>
                         <ul>
                             <li><strong>DX3rd</strong>: RW, CE, DR, HR, RU, CRC, NC, BC</li>
                             <li><strong>모노톤 뮤지엄</strong>: 코어 (MM)</li>
@@ -572,7 +534,7 @@
                     </div>
 
                     <div class="trpg-block">
-                        <h3>🎲 보유 중인 TRPG 룰북</h3>
+                        <h3>🎲 보유 중인 룰북</h3>
                         <ul>
                             <li>CoC</li>
                             <li>인세인 1, 2</li>
@@ -593,31 +555,31 @@
                 <section class="ng-section">
                     <h2>NG / 주의사항</h2>
 
-                    <p class="ng-note">
-                        아래와 같은 언행이나 행동은 제 타임라인에서 보고 싶지 않습니다.
-                    </p>
+                    <p class="ng-note">다음과 같은 언행은 제 타임라인에서 보고 싶지 않습니다.</p>
 
                     <ul class="ng-list">
-                        <li><strong>비하 워딩 사용:</strong> 병신, 장애인 등의 단어를 포함한 욕설</li>
-                        <li><strong>뇨타 / 단타 관련 언급:</strong> 저에게 직접 멘션만 하지 않으시면 괜찮습니다.</li>
-                        <li><strong>퀴어 혐오 발언:</strong> 동인계에서 ‘레즈’, ‘게이’라는 식의 경박한 표현 포함</li>
-                        <li><strong>명일방주 관련 NG:</strong>
+                        <li><strong>비하 워딩:</strong> 병신, 장애인 등의 단어가 포함된 욕설</li>
+                        <li><strong>뇨타 / 단타 관련 언급:</strong> 저에게 직접 멘션만 삼가주시면 괜찮습니다.</li>
+                        <li><strong>퀴어 혐오 표현:</strong> ‘레즈’, ‘게이’ 등 경박한 동인 표현 포함</li>
+                        <li>
+                            <strong>명일방주 관련 NG:</strong>
                             <ul>
-                                <li>밈 소비 위주로 소비하는 태도</li>
+                                <li>밈 위주로만 소비하는 태도</li>
                                 <li>서버 오픈 전 클라이언트 파일 유출 (클뜯)</li>
-                                <li>스토리를 읽지 않고 공개 계정에서 헤이트 발언을 하는 행위</li>
+                                <li>스토리 미이해 상태에서 공개 계정으로 헤이트 발언</li>
                             </ul>
                         </li>
                     </ul>
 
                     <p class="ng-closing">
                         <strong>명일방주를 정말 사랑합니다.</strong><br>
-                        이제 6년차를 맞이한 게임이다 보니, 유저의 기대에 부응하지 못하는 업데이트가 나올 수도 있다는 점은 이해합니다.<br>
-                        다만, 그 실망을 <em>원색적인 욕설</em>이나 <em>해석 없는 비난</em>으로 풀어내는 태도는 보기 힘듭니다.<br>
-                        이 게임을 소중하게 즐기는 유저도 있다는 점을 기억해 주세요.
+                        6년차 게임인 만큼 아쉬움이 있을 수 있음을 이해합니다.<br>
+                        하지만 그 실망을 <em>원색적인 욕설</em>이나 <em>비해석적 비난</em>으로 풀지 말아 주세요.<br>
+                        이 게임을 소중히 여기는 유저도 있다는 점을 기억해 주세요.
                     </p>
                 </section>
             </div>
+
 
             <div class="social-icons">
                 <a href="https://x.com/time2ReachOut" target="_blank" tooltip="@Time2ReachOut" flow="up">

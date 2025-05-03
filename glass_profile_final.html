@@ -1,75 +1,86 @@
 <!DOCTYPE html>
+
 <html lang="ko">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PROFILE</title>
-    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
-        <!-- X 아이콘 -->
-        <symbol id="icon-x" viewBox="0 0 50 50">
-            <path
-                d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z">
-            </path>
-        </symbol>
-
-        <!-- 홈 -->
-        <symbol id="icon-home" viewBox="0 0 50 50">
-            <path
-                d="M 25 1.0507812 C 24.7825 1.0507812 24.565859 1.1197656 24.380859 1.2597656 L 1.3808594 19.210938 C 0.95085938 19.550938 0.8709375 20.179141 1.2109375 20.619141 C 1.5509375 21.049141 2.1791406 21.129062 2.6191406 20.789062 L 4 19.710938 L 4 46 C 4 46.55 4.45 47 5 47 L 19 47 L 19 29 L 31 29 L 31 47 L 45 47 C 45.55 47 46 46.55 46 46 L 46 19.710938 L 47.380859 20.789062 C 47.570859 20.929063 47.78 21 48 21 C 48.3 21 48.589063 20.869141 48.789062 20.619141 C 49.129063 20.179141 49.049141 19.550938 48.619141 19.210938 L 25.619141 1.2597656 C 25.434141 1.1197656 25.2175 1.0507812 25 1.0507812 z M 35 5 L 35 6.0507812 L 41 10.730469 L 41 5 L 35 5 z">
-            </path>
-        </symbol>
-
-        <!-- 블로그 -->
-        <symbol id="icon-blog" viewBox="0 0 50 50">
-            <path
-                d="M 15 3 L 15 19.9375 L 19 17.90625 L 23 20 L 23 3 Z M 11 6 C 7.636719 6 5 8.636719 5 12 L 5 33 C 5 36.363281 7.636719 39 11 39 L 12 39 L 12 47.21875 L 21.375 39 L 40 39 C 43.363281 39 46 36.363281 46 33 L 46 12 C 46 8.636719 43.363281 6 40 6 L 25 6 L 25 22.375 L 19 30 L 13 22.375 L 13 6 Z M 19 20.09375 L 15.28125 21.96875 L 17.65625 25 L 20.3125 25 L 22.65625 22 Z M 19.125 30 L 44 30 L 44 33 C 44 35.242188 42.242188 37 40 37 L 23.53125 37 Z">
-            </path>
-        </symbol>
-
-        <!-- 노션 -->
-        <symbol id="icon-notion" viewBox="0 0 50 50">
-            <path
-                d="M 9 4 C 6.239 4 4 6.239 4 9 L 4 41 C 4 43.761 6.239 46 9 46 L 41 46 C 43.761 46 46 43.761 46 41 L 46 9 C 46 6.239 43.761 4 41 4 L 9 4 z M 20 12 L 25 12 C 29.42 12 33.033 15.632547 33 20.060547 C 32.991 21.141547 33.919 22 35 22 L 36 22 C 37.105 22 38 22.895 38 24 L 38 30 C 38 34.4 34.4 38 30 38 L 20 38 C 15.6 38 12 34.4 12 30 L 12 25 L 12 20 C 12 15.6 15.6 12 20 12 z M 20 18 C 18.9 18 18 18.9 18 20 C 18 21.1 18.9 22 20 22 L 25 22 C 26.1 22 27 21.1 27 20 C 27 18.9 26.1 18 25 18 L 20 18 z M 20 28 C 18.9 28 18 28.9 18 30 C 18 31.1 18.9 32 20 32 L 30 32 C 31.1 32 32 31.1 32 30 C 32 28.9 31.1 28 30 28 L 20 28 z">
-            </path>
-        </symbol>
-    </svg>
-
-    <style>
-
-  .profile-card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(12px) saturate(180%);
-      -webkit-backdrop-filter: blur(12px) saturate(180%);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 0 40px rgba(28, 212, 252, 0.3);
-  }
-
-  .icon {
-      width: 20px;
-      height: 20px;
-      fill: #1cd4fc;
-      transition: transform 0.2s ease;
-      vertical-align: middle;
-  }
-
-  .loader-wrapper {
-      opacity: 1;
-      transition: opacity 1s ease;
-  }
-
-  .loader-wrapper.fade-out {
-      opacity: 0;
-      pointer-events: none;
-  }
-</style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PROFILE</title>
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+<!-- X 아이콘 -->
+<symbol id="icon-x" viewbox="0 0 50 50">
+<path d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z">
+</path>
+</symbol>
+<!-- 홈 -->
+<symbol id="icon-home" viewbox="0 0 50 50">
+<path d="M 25 1.0507812 C 24.7825 1.0507812 24.565859 1.1197656 24.380859 1.2597656 L 1.3808594 19.210938 C 0.95085938 19.550938 0.8709375 20.179141 1.2109375 20.619141 C 1.5509375 21.049141 2.1791406 21.129062 2.6191406 20.789062 L 4 19.710938 L 4 46 C 4 46.55 4.45 47 5 47 L 19 47 L 19 29 L 31 29 L 31 47 L 45 47 C 45.55 47 46 46.55 46 46 L 46 19.710938 L 47.380859 20.789062 C 47.570859 20.929063 47.78 21 48 21 C 48.3 21 48.589063 20.869141 48.789062 20.619141 C 49.129063 20.179141 49.049141 19.550938 48.619141 19.210938 L 25.619141 1.2597656 C 25.434141 1.1197656 25.2175 1.0507812 25 1.0507812 z M 35 5 L 35 6.0507812 L 41 10.730469 L 41 5 L 35 5 z">
+</path>
+</symbol>
+<!-- 블로그 -->
+<symbol id="icon-blog" viewbox="0 0 50 50">
+<path d="M 9 4 C 6.239 4 4 6.239 4 9 L 4 41 C 4 43.761 6.239 46 9 46 L 41 46 C 43.761 46 46 43.761 46 41 L 46 9 C 46 6.239 43.761 4 41 4 L 9 4 z M 20 12 L 25 12 C 29.42 12 33.033 15.632547 33 20.060547 C 32.991 21.141547 33.919 22 35 22 L 36 22 C 37.105 22 38 22.895 38 24 L 38 30 C 38 34.4 34.4 38 30 38 L 20 38 C 15.6 38 12 34.4 12 30 L 12 25 L 12 20 C 12 15.6 15.6 12 20 12 z M 20 18 C 18.9 18 18 18.9 18 20 C 18 21.1 18.9 22 20 22 L 25 22 C 26.1 22 27 21.1 27 20 C 27 18.9 26.1 18 25 18 L 20 18 z M 20 28 C 18.9 28 18 28.9 18 30 C 18 31.1 18.9 32 20 32 L 30 32 C 31.1 32 32 31.1 32 30 C 32 28.9 31.1 28 30 28 L 20 28 z">
+</path>
+</symbol>
+<!-- 노션 -->
+<symbol id="icon-notion" viewbox="0 0 50 50">
+<path d="M44.62 13.13c-.23-.21-.52-.33-.83-.33-.02 0-.05.01-.08.01l-29.86 1.92c-.63.04-1.13.58-1.13 1.21v28.75c0 .34.14.65.38.88.25.23.57.35.91.33l29.86-1.93C44.51 43.93 45 43.4 45 42.76V14.02C45 13.68 44.87 13.36 44.62 13.13zM38.11 20.92c-.6.19-.79.2-.79.2v17.24c-1.02.55-1.86.81-2.74.81-1.07 0-1.68-.24-2.5-1.5-1.74-2.69-7.41-11.81-7.41-11.81v11.45l2.23.47c0 0-.06 1.3-2.01 1.45-1.71.13-5.44.32-5.44.32 0-.47.1-1.12.84-1.31.35-.09 1.4-.37 1.4-.37V22.42h-2.24c0-1.03.3-1.83 1.38-1.91l5.79-.33 7.73 11.92V21.49l-2.24-.19c0-.93.9-1.5 1.67-1.58l5.04-.28C38.82 20.09 38.79 20.7 38.11 20.92zM4.98 8.54l5.74 5.74v29.54L5.6 37.66c-.41-.58-.62-1.25-.62-1.96V8.54zM42.72 10.91l-29.06 1.83c-.99.07-1.95-.3-2.65-.99L6.24 6.97l27.19-1.89c.81-.07 1.62.17 2.28.66L42.72 10.91z">
+</path>
+</symbol>
+</svg>
 <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+/* 공통 글래스 스타일 */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+    color: #eafcff;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.glass-list {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.glass-list li {
+    margin-bottom: 6px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: #eafcff;
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+.icon:hover {
+    transform: scale(1.1);
+    fill: #1cd4fc;
+}
+
+
+        @font-face {
+            font-family: 'SUITE-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'SBAggroB';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 
         body {
             margin: 0;
-            font-family: 'Noto Sans KR', sans-serif;
+            font-family: 'SUITE-Regular', 'SBAggroB';
             background-color: #111;
             color: #fff;
             overflow-x: hidden;
@@ -178,10 +189,11 @@
         }
 
         .icon {
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             fill: #1cd4fc;
             transition: transform 0.2s ease;
+            vertical-align: middle;
         }
 
         .icon:hover {
@@ -209,6 +221,13 @@
             align-items: center;
             justify-content: center;
             z-index: 9999;
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+
+        .loader-wrapper.fade-out {
+            opacity: 0;
+            pointer-events: none;
         }
 
         .loader {
@@ -249,107 +268,419 @@
                 transform: translate(0px, 0px) rotate(-45deg)
             }
         }
+
+        [tooltip] {
+            position: relative;
+        }
+
+        /* 본체 */
+        [tooltip]::after {
+            content: attr(tooltip);
+            position: absolute;
+            background: rgba(255, 255, 255, 0.15);
+            color: #e3faff;
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(6px) saturate(150%);
+            -webkit-backdrop-filter: blur(6px) saturate(150%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            z-index: 9999;
+            transform: translateX(-50%) translateY(0.5em);
+        }
+
+        /* 꼭지점 */
+        [tooltip]::before {
+            content: "";
+            position: absolute;
+            border: 6px solid transparent;
+            opacity: 0;
+            z-index: 9998;
+            transform: translateX(-50%) translateY(0.5em);
+        }
+
+        /* 위로 */
+        [tooltip][flow^="up"]::after {
+            bottom: calc(100% + 8px);
+            left: 50%;
+        }
+
+        [tooltip][flow^="up"]::before {
+            bottom: 100%;
+            border-bottom-width: 0;
+            border-top-color: rgba(255, 255, 255, 0.15);
+            left: 50%;
+        }
+
+        /* 애니메이션 */
+        [tooltip][flow^="up"]:hover::before,
+        [tooltip][flow^="up"]:hover::after {
+            animation: tooltip-up 300ms ease-out forwards;
+        }
+
+        @keyframes tooltip-up {
+            to {
+                transform: translateX(-50%) translateY(0);
+                opacity: 1;
+            }
+        }
+
+
+        .profile-intro {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            color: #eafcff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            margin-top: 24px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .profile-intro .tagline {
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        .profile-intro h3 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #b5eaff;
+        }
+
+        .profile-intro ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .profile-intro ul li {
+            margin-bottom: 6px;
+        }
+
+        .arknights-profile {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px) saturate(150%);
+            -webkit-backdrop-filter: blur(10px) saturate(150%);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 18px;
+            padding: 24px;
+            margin-top: 32px;
+            color: #e8faff;
+            font-size: 0.95rem;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+            line-height: 1.7;
+        }
+
+        .arknights-profile h2 {
+            font-size: 1.3rem;
+            color: #9fdfff;
+            margin-bottom: 12px;
+        }
+
+        .arknights-profile h3 {
+            font-size: 1rem;
+            color: #ffd3f7;
+            margin: 1em 0 0.5em;
+        }
+
+        .arknights-profile .ark-id {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .arknights-profile .ark-lists {
+            margin-top: 12px;
+        }
+
+        .arknights-profile .ark-lists p {
+            margin: 0;
+        }
+
+        .trpg-profile {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px) saturate(150%);
+            -webkit-backdrop-filter: blur(10px) saturate(150%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            color: #eafcff;
+            font-size: 0.95rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            line-height: 1.6;
+        }
+
+        .trpg-profile h2 {
+            font-size: 1.3rem;
+            color: #aee9ff;
+            margin-bottom: 16px;
+        }
+
+        .trpg-profile h3 {
+            font-size: 1rem;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            color: #ffc7f8;
+        }
+
+        .trpg-block p {
+            margin-bottom: 0.5em;
+        }
+
+        .trpg-profile ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-top: 0.2em;
+        }
+
+        .trpg-profile ul li {
+            margin-bottom: 4px;
+        }
+
+        .ng-section {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px) saturate(160%);
+            -webkit-backdrop-filter: blur(10px) saturate(160%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            color: #f2fdff;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            margin-top: 24px;
+        }
+
+        .ng-section h2 {
+            font-size: 1.3rem;
+            color: #ffb6d9;
+            margin-bottom: 12px;
+        }
+
+        .ng-note {
+            margin-bottom: 12px;
+            color: #d0f0ff;
+            font-weight: 500;
+        }
+
+        .ng-list {
+            list-style: disc;
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        .ng-list li {
+            margin-bottom: 10px;
+        }
+
+        .ng-list ul {
+            list-style: circle;
+            padding-left: 20px;
+            margin-top: 6px;
+        }
+
+        .ng-closing {
+            margin-top: 20px;
+            color: #c9f4ff;
+        }
+
+        .ng-closing em {
+            color: #ffdddd;
+            font-style: normal;
+            font-weight: 600;
+        }
     </style>
-
 </head>
-
 <body>
-    <!-- 로딩 화면 -->
-    <div class="loader-wrapper">
-        <span class="loader"></span>
-    </div>
+<!-- 로딩 화면 -->
+<div class="loader-wrapper">
+<span class="loader"></span>
+</div>
+<!-- 본문 콘텐츠 -->
+<div id="main-content" style="display:none;">
+<div class="profile-card">
+<img alt="sealTime" class="avatar" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FyKQ87%2FbtsNKwjf6It%2Ft6u7krSXEDtO9yY98XqYLK%2Fimg.png"/>
+<h1 style="font-family:'SBAggroB'">letsSealTime</h1>
+<p class="subtitle">
+                성인. RT 많음. 미소녀 취향.<br/>
+                Arknights(CN) / DX3rd / 자캐 커뮤니티
+            </p>
+<div class="tabs" style="font-weight:600">
+<button class="tab active" data-tab="profile">기본 프로필</button>
+<button class="tab" data-tab="arknights">명일방주</button>
+<button class="tab" data-tab="trpg">TRPG</button>
+<button class="tab" data-tab="ng">NG</button>
+</div>
+<div class="tab-content active glass-panel" id="profile">
+<section class="profile-intro">
+<p class="tagline">성인 여성입니다.<br/>
+                        일상, 게임, 자캐, 그리고 시국 관련 이야기까지 뒤섞인 잡탕찌개 계정이에요.<br/>
+                        타임라인 분리를 못 합니다. (모든 관심사가 섞여 있어요!)
+                    </p>
+<div class="favorites">
+<h3>💕FAVES</h3>
+<ul>
+<li>명일방주 (bilibili Server)</li>
+<li>건담 (우주세기 시리즈)</li>
+<li>자캐 커뮤니티</li>
+<li>TRPG (DX3rd)</li>
+<li>물범 (Animal)</li>
+<li>미소녀 백합물 : 신작이 나오면 일단 한 입 먹어봅니다.</li>
+</ul>
+</div>
+</section>
+</div>
+<div class="tab-content glass-panel" id="arknights">
+<p>
+<section class="arknights-profile">
+<h2>Arknights</h2>
+<p class="ark-id"><strong>Dr. Cullet #8906</strong> <br/>
+                        비리비리 서버에서 플레이 중입니다.
+                    </p>
+<p class="ark-activity">
+                        주로 그림, 썰, 번역 중심으로 활동하고 있어요.<br/>
+                        여기서도 미소녀 캐릭터 위주로 덕질합니다.
+                    </p>
+<p class="ark-preference">
+                        기본적으로 논CP 위주지만,<br/>
+                        가끔 GL 커플 언급도 있습니다.
+                    </p>
+<p class="ark-offer">
+                        공식 스토리 (이벤트, 오퍼레이터 레코드, 모듈) 번역 요청해 주시면,<br/>
+                        짬날 때 진행해서 공유드려요.
+                    </p>
+<div class="ark-lists">
+<div class="ark-like">
+<h3>❤️ Like</h3>
+<p>아르모니, 불피스폴리아, 래디아, 페넌스, 로사, 카넬리안, 베나</p>
+</div>
+<div class="ark-dream">
+<h3>❤️ GORANY Dr.Agony x Harmonie</h3>
+<p>박사 × 아르모니 CP 드림 중입니다.<br/>
+                                온리 성향이라 겹드림은 다소 어렵습니다. 그 외의 배려는 괜찮아요.</p>
+</div>
+</div>
+</section>
+</p>
+</div>
+<div class="tab-content glass-panel" id="trpg">
+<section class="trpg-profile">
+<h2>TRPG</h2>
+<p class="trpg-main">
+                        주력 룰은 <strong>CoC</strong>와 <strong>DX3rd</strong>이며, 가벼운 RP 위주의 플레이를 선호합니다.
+                    </p>
+<div class="trpg-block">
+<h3>🎲 배포 중인 번역 룰북</h3>
+<p>1차 번역 배포 중인 TRPG 룰북이 있습니다.<br/>
+                            원하신다면 DM으로 인증 방법을 안내드립니다.</p>
+<ul>
+<li><strong>DX3rd</strong>: RW, CE, DR, HR, RU, CRC, NC, BC</li>
+<li><strong>모노톤 뮤지엄</strong>: 코어 (MM)</li>
+</ul>
+</div>
+<div class="trpg-block">
+<h3>🎲 보유 중인 TRPG 룰북</h3>
+<ul>
+<li>CoC</li>
+<li>인세인 1, 2</li>
+<li>마기카로기아 (황혼선서)</li>
+<li>로그 호라이즌</li>
+<li>마우스가드</li>
+<li>은검의 스텔라나이츠</li>
+<li>언성듀엣</li>
+<li>피아스코 (컴패니언)</li>
+<li>아니마아니무스</li>
+<li>가든 오더</li>
+</ul>
+</div>
+</section>
+</div>
+<div class="tab-content glass-panel" id="ng">
+<section class="ng-section">
+<h2>NG / 주의사항</h2>
+<p class="ng-note">
+                        아래와 같은 언행이나 행동은 제 타임라인에서 보고 싶지 않습니다.
+                    </p>
+<ul class="ng-list">
+<li><strong>비하 워딩 사용:</strong> 병신, 장애인 등의 단어를 포함한 욕설</li>
+<li><strong>뇨타 / 단타 관련 언급:</strong> 저에게 직접 멘션만 하지 않으시면 괜찮습니다.</li>
+<li><strong>퀴어 혐오 발언:</strong> 동인계에서 ‘레즈’, ‘게이’라는 식의 경박한 표현 포함</li>
+<li><strong>명일방주 관련 NG:</strong>
+<ul>
+<li>밈 소비 위주로 소비하는 태도</li>
+<li>서버 오픈 전 클라이언트 파일 유출 (클뜯)</li>
+<li>스토리를 읽지 않고 공개 계정에서 헤이트 발언을 하는 행위</li>
+</ul>
+</li>
+</ul>
+<p class="ng-closing">
+<strong>명일방주를 정말 사랑합니다.</strong><br/>
+                        이제 6년차를 맞이한 게임이다 보니, 유저의 기대에 부응하지 못하는 업데이트가 나올 수도 있다는 점은 이해합니다.<br/>
+                        다만, 그 실망을 <em>원색적인 욕설</em>이나 <em>해석 없는 비난</em>으로 풀어내는 태도는 보기 힘듭니다.<br/>
+                        이 게임을 소중하게 즐기는 유저도 있다는 점을 기억해 주세요.
+                    </p>
+</section>
+</div>
+<div class="social-icons">
+<a flow="up" href="https://x.com/time2ReachOut" target="_blank" tooltip="@Time2ReachOut">
+<svg class="icon">
+<use xlink:href="#icon-x"></use>
+</svg>
+</a>
+<a flow="up" href="https://gaeramm.tistory.com/" target="_blank" tooltip="Tistory Home">
+<svg class="icon">
+<use xlink:href="#icon-home"></use>
+</svg>
+</a>
+<a flow="up" href="https://blog.naver.com/gaedol321" target="_blank" tooltip="Naver Blog">
+<svg class="icon">
+<use xlink:href="#icon-blog"></use>
+</svg>
+</a>
+<a flow="up" href="https://pao321.notion.site/124f4b1f836845a18bdbc9feda4d3689?pvs=141" target="_blank" tooltip="Backup Notion">
+<svg class="icon">
+<use xlink:href="#icon-notion"></use>
+</svg>
+</a>
+</div>
+</div>
+<div class="background"></div>
+<script>
 
-    <!-- 본문 콘텐츠 -->
-    <div id="main-content" style="display:none;">
-        <div class="profile-card">
-            <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FyKQ87%2FbtsNKwjf6It%2Ft6u7krSXEDtO9yY98XqYLK%2Fimg.png"
-                alt="sealTime" class="avatar" />
-            <h1>letsSealTime</h1>
-            <p class="subtitle">성인. RT많음. 미소녀 취향<br>
-                Arknights(CN), DX3rd, 자캐 커뮤니티</p>
-
-            <div class="tabs">
-                <button class="tab active" data-tab="profile">기본 프로필</button>
-                <button class="tab" data-tab="arknights">명일방주</button>
-                <button class="tab" data-tab="trpg">TRPG</button>
-                <button class="tab" data-tab="ng">NG</button>
-            </div>
-
-            <div class="tab-content active" id="profile">
-                <p>어쩌고 저쩌고</p>
-            </div>
-            <div class="tab-content" id="arknights">
-                <p>명일방주 세계관 속 설정입니다.</p>
-            </div>
-            <div class="tab-content" id="trpg">
-                <p>TRPG 캐릭터 설명입니다.</p>
-            </div>
-            <div class="tab-content" id="ng">
-                <p>기타 NG 항목입니다.</p>
-            </div>
-
-            <div class="social-icons">
-                <a href="https://x.com/time2ReachOut" target="_blank">
-                    <svg class="icon">
-                        <use xlink:href="#icon-x"></use>
-                    </svg>
-                </a>
-                <a href="https://gaeramm.tistory.com/" target="_blank">
-                    <svg class="icon">
-                        <use xlink:href="#icon-home"></use>
-                    </svg>
-                </a>
-                <a href="https://blog.naver.com/gaedol321" target="_blank">
-                    <svg class="icon">
-                        <use xlink:href="#icon-blog"></use>
-                    </svg>
-                </a>
-                <a href="https://pao321.notion.site/124f4b1f836845a18bdbc9feda4d3689?pvs=141 " target="_blank">
-                    <svg class=" icon">
-                        <use xlink:href="#icon-notion"></use>
-                    </svg>
-                </a>
-            </div>
-        </div>
-
-
-    </div>
-
-
-
-    <div class="background"></div>
-
-
-
-    <script>
-
-        window.addEventListener("load", function () {
-            setTimeout(function () {
-                const loader = document.querySelector(".loader-wrapper");
-                loader.classList.add("fade-out");
-                setTimeout(() => {
-                    loader.style.display = "none";
-                    document.getElementById("main-content").style.display = "block";
-                }, 1000);
-            }, 2000); 
-        });
-
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                // 탭 버튼 토글
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-
-                // 콘텐츠 토글
-                const selected = tab.getAttribute('data-tab');
-                document.querySelectorAll('.tab-content').forEach(content => {
-                    content.classList.remove('active');
-                });
-                document.getElementById(selected).classList.add('active');
+            window.addEventListener("load", function () {
+                setTimeout(function () {
+                    const loader = document.querySelector(".loader-wrapper");
+                    loader.classList.add("fade-out");
+                    setTimeout(() => {
+                        loader.style.display = "none";
+                        document.getElementById("main-content").style.display = "block";
+                    }, 1000);
+                }, 1800);
             });
-        });
 
-    </script>
-</body>
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // 탭 버튼 토글
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
 
+                    // 콘텐츠 토글
+                    const selected = tab.getAttribute('data-tab');
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    document.getElementById(selected).classList.add('active');
+                });
+            });
+
+        </script>
+</div></body>
 </html>
