@@ -66,8 +66,7 @@
 
         .profile-card {
             background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(18px) saturate(150%);
-            -webkit-backdrop-filter: blur(18px) saturate(150%);
+            backdrop-filter: blur(1px) saturate(150%);
             border-radius: 20px;
             padding: 40px;
             text-align: center;
@@ -170,20 +169,6 @@
         }
 
         /* 로딩 전체 래퍼 */
-        .loader-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #111;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-        }
-
-        /* 로딩 애니메이션 */
         .loader {
             position: relative;
             width: 64px;
@@ -197,36 +182,27 @@
             content: '';
             position: absolute;
             inset: 8px;
+            margin: auto;
             background: #222b32;
-            z-index: 1;
         }
 
         .loader:before {
             content: '';
             position: absolute;
-            left: 8px;
-            right: 8px;
-            bottom: -100%;
-            top: auto;
+            inset: -15px;
+            margin: auto;
             background: #1cd4fc;
-            animation: riseLoader 2s ease-in-out infinite;
-            z-index: 0;
+            animation: diamondLoader 2s linear infinite;
         }
 
-        @keyframes riseLoader {
-            0% {
-                bottom: -100%;
-                top: 100%;
+        @keyframes diamondLoader {
+            0%,
+            10% {
+                transform: translate(-64px, -64px) rotate(-45deg)
             }
-
-            50% {
-                bottom: 0%;
-                top: 0%;
-            }
-
+            90%,
             100% {
-                bottom: -100%;
-                top: 100%;
+                transform: translate(0px, 0px) rotate(-45deg)
             }
         }
     </style>
@@ -235,9 +211,7 @@
 
 <body>
     <!-- 로딩 화면 -->
-    <div class="loader-wrapper">
         <span class="loader"></span>
-    </div>
 
     <!-- 본문 콘텐츠 -->
     <div id="main-content" style="display:none;">
@@ -269,24 +243,24 @@
             </div>
 
             <div class="social-icons">
-                <a href="https://x.com/time2ReachOut" target="_blank">
+                <a href="https://x.com/time2ReachOut" target="_blank" alt="X">
                     <svg class="icon">
                         <use xlink:href="#icon-x"></use>
                     </svg>
                 </a>
-                <a href="https://gaeramm.tistory.com/" target="_blank">
+                <a href="https://gaeramm.tistory.com/" target="_blank" alt="Tistory">
                     <svg class="icon">
                         <use xlink:href="#icon-home"></use>
                     </svg>
                 </a>
-                <a href="https://blog.naver.com/gaedol321" target="_blank">
+                <a href="https://blog.naver.com/gaedol321" target="_blank" alt="Blog">
                     <svg class="icon">
                         <use xlink:href="#icon-blog"></use>
                     </svg>
                 </a>
-                <a href="https://pao321.notion.site/124f4b1f836845a18bdbc9feda4d3689?pvs=141 " target="_blank">
-                    <svg class="icon">
-                        <use xlink:href="#icon-notion"></use>
+                <a href="https://pao321.notion.site/124f4b1f836845a18bdbc9feda4d3689?pvs=141 " target="_blank" alt="Notion>
+                    <svg class=" icon">
+                    <use xlink:href="#icon-notion"></use>
                     </svg>
                 </a>
             </div>
