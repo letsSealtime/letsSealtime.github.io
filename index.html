@@ -6,84 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <style>
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #000;
-            /* 어두운 배경 */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
+       /* 로딩 화면 전체 배경 */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
 
-        .loader .logo {
-            width: 100px;
-            height: 100px;
-            animation: spin 2s linear infinite;
-            /* 회전 애니메이션 */
-        }
+/* 로딩 콘텐츠 중앙 정렬 */
+.loading-content {
+  text-align: center;
+  color: #fff;
+  font-family: 'Arial', sans-serif; /* 명일방주 폰트와 유사한 폰트 사용 */
+}
 
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
+/* 로딩 텍스트 스타일 */
+.loading-text {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
 
-            100% {
-                transform: rotate(360deg);
-            }
-        }
+/* 로딩 퍼센트 스타일 */
+.loading-percentage {
+  font-size: 1.5em;
+}
 
-        .progress-bar {
-            width: 80%;
-            height: 10px;
-            background-color: #444;
-            margin-top: 20px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .progress {
-            width: 0%;
-            height: 100%;
-            background-color: #fff;
-            animation: load 3s forwards;
-        }
-
-        @keyframes load {
-            to {
-                width: 100%;
-            }
-        }
     </style>
 </head>
 
 <body>
-    <!-- 로딩 화면 -->
-    <div id="loading-screen">
-        <div class="loader">
-            <img src="your-logo.png" alt="Logo" class="logo" />
-            <div class="progress-bar">
-                <div class="progress"></div>
-            </div>
-        </div>
+<!-- 로딩 화면 -->
+<div id="loading-screen">
+    <div class="loading-content">
+      <p class="loading-text">LOADING</p>
+      <p class="loading-percentage">0%</p>
     </div>
+  </div>
+  
 
     hello world!
 </body>
 <script>
-    window.addEventListener('load', () => {
-        const loadingScreen = document.getElementById('loading-screen');
-        loadingScreen.style.transition = 'opacity 0.5s ease';
-        loadingScreen.style.opacity = '0';
-        setTimeout(() => {
+    document.addEventListener("DOMContentLoaded", function() {
+      const loadingScreen = document.getElementById('loading-screen');
+      const loadingPercentage = document.querySelector('.loading-percentage');
+      let percent = 0;
+  
+      // 로딩 퍼센트 증가 시뮬레이션
+      const interval = setInterval(() => {
+        if (percent < 100) {
+          percent++;
+          loadingPercentage.textContent = percent + '%';
+        } else {
+          clearInterval(interval);
+          // 로딩 화면 페이드 아웃
+          loadingScreen.style.opacity = '0';
+          setTimeout(() => {
             loadingScreen.style.display = 'none';
-        }, 500);
+          }, 500);
+        }
+      }, 30); // 30ms마다 1% 증가 (약 3초 소요)
     });
-
-</script>
+  </script>
 
 </html>
