@@ -28,7 +28,7 @@
         </symbol>
 
         <!-- 노션 -->
-        <symbol id="icon-notion" viewBox="0 0 64 64">
+        <symbol id="icon-notion" viewBox="0 0 50 50">
             <path
                 d="M44.62 13.13c-.23-.21-.52-.33-.83-.33-.02 0-.05.01-.08.01l-29.86 1.92c-.63.04-1.13.58-1.13 1.21v28.75c0 .34.14.65.38.88.25.23.57.35.91.33l29.86-1.93C44.51 43.93 45 43.4 45 42.76V14.02C45 13.68 44.87 13.36 44.62 13.13zM38.11 20.92c-.6.19-.79.2-.79.2v17.24c-1.02.55-1.86.81-2.74.81-1.07 0-1.68-.24-2.5-1.5-1.74-2.69-7.41-11.81-7.41-11.81v11.45l2.23.47c0 0-.06 1.3-2.01 1.45-1.71.13-5.44.32-5.44.32 0-.47.1-1.12.84-1.31.35-.09 1.4-.37 1.4-.37V22.42h-2.24c0-1.03.3-1.83 1.38-1.91l5.79-.33 7.73 11.92V21.49l-2.24-.19c0-.93.9-1.5 1.67-1.58l5.04-.28C38.82 20.09 38.79 20.7 38.11 20.92zM4.98 8.54l5.74 5.74v29.54L5.6 37.66c-.41-.58-.62-1.25-.62-1.96V8.54zM42.72 10.91l-29.06 1.83c-.99.07-1.95-.3-2.65-.99L6.24 6.97l27.19-1.89c.81-.07 1.62.17 2.28.66L42.72 10.91z">
             </path>
@@ -43,9 +43,16 @@
             font-style: normal;
         }
 
+        @font-face {
+            font-family: 'SBAggroB';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
             margin: 0;
-            font-family: 'SUITE-Regular', sans-serif;
+            font-family: 'SUITE-Regular', 'SBAggroB';
             background-color: #111;
             color: #fff;
             overflow-x: hidden;
@@ -234,7 +241,11 @@
             }
         }
 
-        /* 툴팁 본체 스타일 - Glassmorphism */
+        [tooltip] {
+            position: relative;
+        }
+
+        /* 본체 */
         [tooltip]::after {
             content: attr(tooltip);
             position: absolute;
@@ -250,52 +261,43 @@
             -webkit-backdrop-filter: blur(6px) saturate(150%);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             opacity: 0;
-            transition: opacity 0.2s ease;
             z-index: 9999;
+            transform: translateX(-50%) translateY(0.5em);
         }
 
-        /* 삼각형 포인터 (툴팁 꼭지점) */
+        /* 꼭지점 */
         [tooltip]::before {
             content: "";
             position: absolute;
             border: 6px solid transparent;
             opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-
-        /* 방향: 아래 (기본 flow=down) */
-        [tooltip][flow^="down"]::before {
-            top: 100%;
-            border-top-width: 0;
-            border-bottom-color: rgba(255, 255, 255, 0.15);
-        }
-
-        [tooltip][flow^="down"]::after {
-            top: calc(100% + 8px);
-        }
-
-        [tooltip][flow^="down"]::before,
-        [tooltip][flow^="down"]::after {
-            left: 50%;
+            z-index: 9998;
             transform: translateX(-50%) translateY(0.5em);
         }
 
-        /* 툴팁 hover 시 나타나게 */
-        [tooltip][flow^="down"]:hover::before,
-        [tooltip][flow^="down"]:hover::after {
-            opacity: 1;
-            animation: tooltips-vert 300ms ease-out forwards;
+        /* 위로 */
+        [tooltip][flow^="up"]::after {
+            bottom: calc(100% + 8px);
+            left: 50%;
         }
 
-        [tooltip] {
-            position: relative;
+        [tooltip][flow^="up"]::before {
+            bottom: 100%;
+            border-bottom-width: 0;
+            border-top-color: rgba(255, 255, 255, 0.15);
+            left: 50%;
         }
 
-        /* 애니메이션 정의 */
-        @keyframes tooltips-vert {
+        /* 애니메이션 */
+        [tooltip][flow^="up"]:hover::before,
+        [tooltip][flow^="up"]:hover::after {
+            animation: tooltip-up 300ms ease-out forwards;
+        }
+
+        @keyframes tooltip-up {
             to {
-                opacity: 1;
                 transform: translateX(-50%) translateY(0);
+                opacity: 1;
             }
         }
     </style>
@@ -313,7 +315,7 @@
         <div class="profile-card">
             <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FyKQ87%2FbtsNKwjf6It%2Ft6u7krSXEDtO9yY98XqYLK%2Fimg.png"
                 alt="sealTime" class="avatar" />
-            <h1 style="font-weight:900">letsSealTime</h1>
+            <h1 style="font-family:'SBAggroB'">letsSealTime</h1>
             <p class="subtitle">성인. RT많음. 미소녀 취향<br>
                 Arknights(CN), DX3rd, 자캐 커뮤니티</p>
             <div class="tabs" style="font-weight:600">
@@ -335,28 +337,32 @@
                 <p>기타 NG 항목입니다.</p>
             </div>
             <div class="social-icons">
-                <a href="https://x.com/time2ReachOut" target="_blank" tooltip="@Time2ReachOut" flow="down">
+                <a href="https://x.com/time2ReachOut" target="_blank" tooltip="@Time2ReachOut" flow="up">
                     <svg class="icon">
                         <use xlink:href="#icon-x"></use>
                     </svg>
                 </a>
-                <a href="https://gaeramm.tistory.com/" target="_blank" tooltip="Tistory Home" flow="down">
+
+                <a href="https://gaeramm.tistory.com/" target="_blank" tooltip="Tistory Home" flow="up">
                     <svg class="icon">
                         <use xlink:href="#icon-home"></use>
                     </svg>
                 </a>
-                <a href="https://blog.naver.com/gaedol321" target="_blank" tooltip="Naver Blog" flow="down">
+
+                <a href="https://blog.naver.com/gaedol321" target="_blank" tooltip="Naver Blog" flow="up">
                     <svg class="icon">
                         <use xlink:href="#icon-blog"></use>
                     </svg>
                 </a>
+
                 <a href="https://pao321.notion.site/124f4b1f836845a18bdbc9feda4d3689?pvs=141" target="_blank"
-                    tooltip="Backup Notion" flow="down">
+                    tooltip="Backup Notion" flow="up">
                     <svg class="icon">
                         <use xlink:href="#icon-notion"></use>
                     </svg>
                 </a>
             </div>
+
 
         </div>
 
