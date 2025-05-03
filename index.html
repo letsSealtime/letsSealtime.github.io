@@ -61,6 +61,10 @@
             justify-content: center;
             min-height: 100vh;
             position: relative;
+            color: var(--glass-text);
+            background: #111;
+            line-height: 1.6;
+            padding: 2rem;
         }
 
         .background {
@@ -310,14 +314,6 @@
             --highlight: #1cd4fc;
         }
 
-        body {
-            font-family: 'Pretendard', sans-serif;
-            color: var(--glass-text);
-            background: #111;
-            line-height: 1.6;
-            padding: 2rem;
-        }
-
         /* 탭 콘텐츠 */
         .tab-content {
             display: none;
@@ -371,6 +367,7 @@
 
         /* 리스트 정리 */
         ul {
+            list-style: none;
             padding-left: 1.2rem;
             margin-bottom: 1rem;
         }
@@ -425,13 +422,21 @@
         }
 
         .dream-gradient {
+            display: inline-block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 1.4;
             background: linear-gradient(90deg, #FCC1D5, #95F484);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-fill-color: transparent;
-            font-weight: 700;
-            font-size: 1.2rem;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px;
+            font-family: 'SBAggroB', sans-serif;
         }
     </style>
 
@@ -465,8 +470,8 @@
                 <section class="profile-intro">
                     <p class="tagline">
                         성인 여성입니다.<br>
-                        일상, 게임, 자캐, 시국 관련 이야기까지 뒤섞인 잡탕찌개 계정이에요.<br>
-                        타임라인 분리를 하지 않습니다. <span class="highlight">(모든 관심사가 섞여 있어요!)</span>
+                        일상, 게임, 자캐, 시국 및 정치치 관련 이야기까지 뒤섞인 잡탕찌개 계정이에요.<br>
+                        타임라인 분리를 하지 않습니다.<br><span class="highlight">(모든 관심사가 섞여 있어요!)</span>
                     </p>
 
                     <div class="favorites">
@@ -489,7 +494,7 @@
                     <p class="ark-id"><strong>Dr. Cullet #8906</strong><br>비리비리 서버에서 플레이 중입니다.</p>
 
                     <p class="ark-activity">
-                        주로 그림, 썰, 번역 중심으로 활동 중이며,<br>
+                        주로 그림, 썰, 번역 중심으로 창작.<br>
                         여기서도 미소녀 캐릭터 위주로 덕질합니다.
                     </p>
 
@@ -511,7 +516,7 @@
 
                         <div class="ark-dream">
                             <h3 class="dream-gradient">❤️ Dream: Dr. Agony × Harmonie</h3>
-                            <p>박사 × 아르모니 CP 드림 중입니다.<br>온리 성향이라 겹드림은 어렵지만, 그 외의 배려는 환영합니다.</p>
+                            <p>박사 × 아르모니 CP 드림 중입니다.<br>온리 성향이라 겹드림은 어렵지만, 그 외의 배려는 괜찮습니다.</p>
                         </div>
                     </div>
                 </section>
