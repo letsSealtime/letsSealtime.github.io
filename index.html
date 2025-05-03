@@ -228,6 +228,43 @@
                 transform: translate(0px, 0px) rotate(-45deg)
             }
         }
+
+        /* FLOW: DOWN */
+        [tooltip][flow^="down"]::before {
+            top: 100%;
+            border-top-width: 0;
+            border-bottom-color: #333;
+        }
+
+        [tooltip][flow^="down"]::after {
+            top: calc(100% + 5px);
+        }
+
+        [tooltip][flow^="down"]::before,
+        [tooltip][flow^="down"]::after {
+            left: 50%;
+            transform: translate(-50%, .5em);
+        }
+
+        /* KEYFRAMES */
+        @keyframes tooltips-vert {
+            to {
+                opacity: .9;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        @keyframes tooltips-horz {
+            to {
+                opacity: .9;
+                transform: translate(0, -50%);
+            }
+        }
+
+        [tooltip][flow^="down"]:hover::before,
+        [tooltip][flow^="down"]:hover::after {
+            animation: tooltips-vert 300ms ease-out forwards;
+        }
     </style>
 
 </head>
@@ -268,26 +305,34 @@
             </div>
 
             <div class="social-icons">
-                <a href="https://x.com/time2ReachOut" target="_blank">
-                    <svg class="icon">
-                        <use xlink:href="#icon-x"></use>
-                    </svg>
-                </a>
-                <a href="https://gaeramm.tistory.com/" target="_blank">
-                    <svg class="icon">
-                        <use xlink:href="#icon-home"></use>
-                    </svg>
-                </a>
-                <a href="https://blog.naver.com/gaedol321" target="_blank">
-                    <svg class="icon">
-                        <use xlink:href="#icon-blog"></use>
-                    </svg>
-                </a>
-                <a href="https://pao321.notion.site/124f4b1f836845a18bdbc9feda4d3689?pvs=141 " target="_blank">
-                    <svg class=" icon">
-                        <use xlink:href="#icon-notion"></use>
-                    </svg>
-                </a>
+                <span tooltip="@Time2ReachOut" flow="down">
+                    <a href="https://x.com/time2ReachOut" target="_blank">
+                        <svg class="icon">
+                            <use xlink:href="#icon-x"></use>
+                        </svg>
+                    </a>
+                </span>
+                <span tooltip="Tistory Home" flow="down">
+                    <a href="https://gaeramm.tistory.com/" target="_blank">
+                        <svg class="icon">
+                            <use xlink:href="#icon-home"></use>
+                        </svg>
+                    </a>
+                </span>
+                <span tooltip="Naver Blog" flow="down">
+                    <a href="https://blog.naver.com/gaedol321" target="_blank">
+                        <svg class="icon">
+                            <use xlink:href="#icon-blog"></use>
+                        </svg>
+                    </a>
+                </span>
+                <span tooltip="Backup Notion" flow="down">
+                    <a href="https://pao321.notion.site/124f4b1f836845a18bdbc9feda4d3689?pvs=141 " target="_blank">
+                        <svg class=" icon">
+                            <use xlink:href="#icon-notion"></use>
+                        </svg>
+                    </a>
+                </span>
             </div>
         </div>
 
@@ -310,7 +355,7 @@
                     loader.style.display = "none";
                     document.getElementById("main-content").style.display = "block";
                 }, 1000); // opacity 전환 시간 후 완전히 제거
-            }, 2000); // 최초 로딩 대기 시간
+            }, 1700); // 최초 로딩 대기 시간
         });
 
         document.querySelectorAll('.tab').forEach(tab => {
