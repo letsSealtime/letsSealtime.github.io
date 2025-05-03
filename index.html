@@ -5,6 +5,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PROFILE</title>
+    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+        <!-- X 아이콘 -->
+        <symbol id="icon-x" viewBox="0 0 50 50">
+            <path d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"></path>
+        </symbol>
+      
+        <!-- 홈 -->
+        <symbol id="icon-home" viewBox="0 0 50 50">
+            <path d="M 25 1.0507812 C 24.7825 1.0507812 24.565859 1.1197656 24.380859 1.2597656 L 1.3808594 19.210938 C 0.95085938 19.550938 0.8709375 20.179141 1.2109375 20.619141 C 1.5509375 21.049141 2.1791406 21.129062 2.6191406 20.789062 L 4 19.710938 L 4 46 C 4 46.55 4.45 47 5 47 L 19 47 L 19 29 L 31 29 L 31 47 L 45 47 C 45.55 47 46 46.55 46 46 L 46 19.710938 L 47.380859 20.789062 C 47.570859 20.929063 47.78 21 48 21 C 48.3 21 48.589063 20.869141 48.789062 20.619141 C 49.129063 20.179141 49.049141 19.550938 48.619141 19.210938 L 25.619141 1.2597656 C 25.434141 1.1197656 25.2175 1.0507812 25 1.0507812 z M 35 5 L 35 6.0507812 L 41 10.730469 L 41 5 L 35 5 z"></path>
+        </symbol>
+      
+        <!-- 블로그 -->
+        <symbol id="icon-blog" viewBox="0 0 50 50">
+            <path d="M 15 3 L 15 19.9375 L 19 17.90625 L 23 20 L 23 3 Z M 11 6 C 7.636719 6 5 8.636719 5 12 L 5 33 C 5 36.363281 7.636719 39 11 39 L 12 39 L 12 47.21875 L 21.375 39 L 40 39 C 43.363281 39 46 36.363281 46 33 L 46 12 C 46 8.636719 43.363281 6 40 6 L 25 6 L 25 22.375 L 19 30 L 13 22.375 L 13 6 Z M 19 20.09375 L 15.28125 21.96875 L 17.65625 25 L 20.3125 25 L 22.65625 22 Z M 19.125 30 L 44 30 L 44 33 C 44 35.242188 42.242188 37 40 37 L 23.53125 37 Z"></path>
+        </symbol>
+      
+        <!-- 노션 -->
+        <symbol id="icon-notion" viewBox="0 0 50 50">
+            <path d="M 9 4 C 6.239 4 4 6.239 4 9 L 4 41 C 4 43.761 6.239 46 9 46 L 41 46 C 43.761 46 46 43.761 46 41 L 46 9 C 46 6.239 43.761 4 41 4 L 9 4 z M 20 12 L 25 12 C 29.42 12 33.033 15.632547 33 20.060547 C 32.991 21.141547 33.919 22 35 22 L 36 22 C 37.105 22 38 22.895 38 24 L 38 30 C 38 34.4 34.4 38 30 38 L 20 38 C 15.6 38 12 34.4 12 30 L 12 25 L 12 20 C 12 15.6 15.6 12 20 12 z M 20 18 C 18.9 18 18 18.9 18 20 C 18 21.1 18.9 22 20 22 L 25 22 C 26.1 22 27 21.1 27 20 C 27 18.9 26.1 18 25 18 L 20 18 z M 20 28 C 18.9 28 18 28.9 18 30 C 18 31.1 18.9 32 20 32 L 30 32 C 31.1 32 32 31.1 32 30 C 32 28.9 31.1 28 30 28 L 20 28 z"></path>
+        </symbol>
+      </svg>
+      
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
 
@@ -152,10 +174,18 @@
         </div>
 
         <div class="social-icons">
-            <a href="#"><img src="link.svg" alt="link" /></a>
-            <a href="#"><img src="twitter.svg" alt="Twitter" /></a>
-            <a href="#"><img src="youtube.svg" alt="YouTube" /></a>
-            <a href="#"><img src="mail.svg" alt="Email" /></a>
+            <a href="https://x.com/time2ReachOut" target="_blank">
+                <svg class="icon"><use xlink:href="#icon-x"></use></svg>
+              </a>
+              <a href="https://gaeramm.tistory.com/" target="_blank">
+                <svg class="icon"><use xlink:href="#icon-home"></use></svg>
+              </a>
+              <a href="https://blog.naver.com/gaedol321" target="_blank">
+                <svg class="icon"><use xlink:href="#icon-blog"></use></svg>
+              </a>
+              <a href="https://pao321.notion.site/124f4b1f836845a18bdbc9feda4d3689?pvs=141 " target="_blank">
+                <svg class="icon"><use xlink:href="#icon-notion"></use></svg>
+              </a>
         </div>
     </div>
 
